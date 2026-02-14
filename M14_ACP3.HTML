@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Map and Arrange Array</title>
+</head>
+<body>
+
+<h2>Map and Arrange Array Example</h2>
+<p id="output"></p>
+
+<script>
+    // Step 1: Create an array
+    let numbers = [5, 12, 8, 20, 3];
+
+    // Step 2: Map the array (multiply each element by 2)
+    let mappedArray = numbers.map(function(num) {
+        return num * 2;
+    });
+
+    // Step 3: Arrange in ascending order
+    let ascending = [...mappedArray].sort(function(a, b) {
+        return a - b;
+    });
+
+    // Step 4: Arrange in descending order
+    let descending = [...mappedArray].sort(function(a, b) {
+        return b - a;
+    });
+
+    // Display results
+    document.getElementById("output").innerHTML =
+        "Original Array: " + numbers + "<br><br>" +
+        "Mapped Array (×2): " + mappedArray + "<br><br>" +
+        "Ascending Order: " + ascending + "<br><br>" +
+        "Descending Order: " + descending;
+
+</script>
+
+</body>
+</html>

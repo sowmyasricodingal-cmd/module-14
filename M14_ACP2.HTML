@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Class in JavaScript</title>
+</head>
+<body>
+
+<h2>JavaScript Class Example</h2>
+<p id="output"></p>
+
+<script>
+    // Parent Class
+    class Person {
+        constructor(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+
+        // Instance method
+        display() {
+            return "Name: " + this.name + "<br>Age: " + this.age;
+        }
+
+        // Static method
+        static greet() {
+            return "Welcome to the Class Inheritance Example!";
+        }
+    }
+
+    // Child Class (Inheritance)
+    class Student extends Person {
+        constructor(name, age, grade) {
+            super(name, age);   // Calling parent constructor
+            this.grade = grade;
+        }
+
+        // Method of child class
+        showDetails() {
+            return this.display() + "<br>Grade: " + this.grade;
+        }
+    }
+
+    // Creating object of Student
+    let student1 = new Student("Rahul", 18, "A");
+
+    // Displaying output
+    document.getElementById("output").innerHTML =
+        Person.greet() + "<br><br>" + student1.showDetails();
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Async Await Example</title>
+</head>
+<body>
+
+<h2>Async and Await Example</h2>
+<p id="output">Loading...</p>
+
+<script>
+    // Asynchronous function
+    async function getNumber() {
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                resolve(25);   // returning value after 2 seconds
+            }, 2000);
+        });
+    }
+
+    // Function dependent on async result
+    async function displayResult() {
+        let number = await getNumber();   // waiting for result
+        document.getElementById("output").innerHTML =
+            "Received Number: " + number;
+    }
+
+    // Calling the function
+    displayResult();
+</script>
+
+</body>
+</html>

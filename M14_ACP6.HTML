@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Form Validation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input, button {
+            padding: 8px;
+            margin: 8px;
+        }
+        #message {
+            font-weight: bold;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Login Form</h2>
+
+<input type="text" id="name" placeholder="Enter your name"><br>
+<input type="text" id="age" placeholder="Enter your age"><br>
+
+<button onclick="validateLogin()">Login</button>
+
+<p id="message"></p>
+
+<script>
+function validateLogin() {
+    let name = document.getElementById("name").value.trim();
+    let age = document.getElementById("age").value.trim();
+    let message = document.getElementById("message");
+
+    // Validation
+    if (name === "" || age === "") {
+        message.innerHTML = "Please enter both name and age.";
+        return;
+    }
+
+    if (isNaN(age)) {
+        message.innerHTML = "Age must be a number.";
+        return;
+    }
+
+    age = Number(age);
+
+    if (age < 18) {
+        message.innerHTML = "Access denied. You must be 18 or older.";
+    } else {
+        message.innerHTML = "Login successful. Welcome, " + name + "!";
+    }
+}
+</script>
+
+</body>
+</html>

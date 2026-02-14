@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Try Catch Example</title>
+</head>
+<body>
+
+<h2>Try and Catch Example</h2>
+<p id="output"></p>
+
+<script>
+    try {
+        // Creating an error (undefined variable)
+        let result = number1 + 10;
+        
+        document.getElementById("output").innerHTML = result;
+    }
+    catch(error) {
+        // Displaying the error message
+        document.getElementById("output").innerHTML =
+            "Error occurred: " + error.message;
+    }
+</script>
+
+</body>
+</html>
